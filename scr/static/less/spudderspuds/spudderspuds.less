@@ -1,0 +1,1267 @@
+// Core variables and mixins
+@import "../libs/bootstrap-material-design/_variables.less";
+@import "../libs/bootstrap-material-design/_mixins.less";
+@import "../libs/spudder-bootstrap/spudder-bootstrap.less";
+@import "clubs/spudderclubs.less";
+
+#main-splash {
+
+    .jumbotron {
+        background-image: url('/static/img/footballfield.jpg');
+        background-position: center center;
+        height: 600px;
+        background-size: cover;
+        overflow:hidden;
+        margin-top: -130px;
+        margin-bottom: 0;
+
+
+        @media (max-width: @screen-xs-max) {
+            height:350px;
+        }
+    }
+
+    #registration-section {
+        background-image: url('/static/img/footballfield.jpg');
+        background-position: center bottom;
+        width: 100%;
+        background-size: cover;
+        overflow:hidden;
+        position: relative;
+        padding: 40px 0;
+
+        h1 {
+            color: #ffffff;
+            font-size: 48px;
+            @media(max-width: @screen-sm-max){
+                font-size: 30px;
+            }
+        }
+        p {
+            color: #fafafa;
+            font-size: 18px;
+        }
+        form {
+            padding-top: 40px;
+            button {
+                font-size: 18px;
+                padding: 15px 14px;
+            }
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            #gradient.radial(rgba(0,0,0,.3); rgba(0,0,0,.8));
+        }
+    }
+
+    #challenges-cta {
+        width: 100%;
+        background: #F1f1f1;
+        overflow:hidden;
+        position: relative;
+        padding: 40px 0 80px;
+
+        @media(max-width: @screen-sm-max){
+            padding-bottom: 40px;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 48px;
+            @media(max-width: @screen-sm-max){
+                font-size: 30px;
+            }
+        }
+        p {
+            color: #fafafa;
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        h2 {
+            padding-top: 40px;
+            margin: 20px 0;
+        }
+        .btn {
+            font-size: 18px;
+            padding: 15px 14px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            #gradient.radial(rgba(0,0,0,.2); rgba(0,0,0,.5));
+        }
+    }
+
+    #entities-section {
+        padding: 40px 0;
+        .entity-section-header {
+            background-color: @brand-primary;
+            color: #ffffff;
+            padding: 20px 10px;
+            font-size: 28px;
+            margin-bottom: 0;
+            position: relative;
+            > img {
+                float: right;
+                height: 28px;
+            }
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                #gradient.radial(rgba(0,0,0,0); rgba(0,0,0,.05));
+            }
+            @media(max-width: @screen-sm-max){
+                font-size: 18px;
+                padding: 10px 10px;
+                > img {
+                    height: 18px;
+                }
+            }
+        }
+        .top-entity {
+            .image {
+                height: 150px;
+                background-position: center center;
+                background-size: cover;
+                position: relative;
+                > img {
+                    position: absolute;
+                    bottom: 5px;
+                    left: 5px;
+                    height: 50px;
+                }
+            }
+            h4 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+        .list-group {
+            width: 90%;
+            margin: 0 auto;
+            hr {
+                margin-top: 7px;
+                margin-bottom: 7px;
+            }
+            .list-group-item {
+                h5 {
+                    font-size: 18px;
+                    margin: 0;
+                }
+                img {
+                    width: 40px;
+                }
+            }
+        }
+    }
+}
+
+#challenges-splash {
+
+    .jumbotron {
+        background-image: url('/static/img/spudderspuds/challenges/jumbotron.jpg');
+        background-position: center top;
+        height: 600px;
+        background-size: cover;
+        overflow:hidden;
+        margin-top: -180px;
+        margin-bottom: 0;
+        position: relative;
+
+        h1 {
+            color: #ffffff;
+            margin-top: 120px;
+        }
+
+        @media (max-width: @screen-xs-max) {
+            height:350px;
+            background-position: center center;
+            margin-top: -80px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            #gradient.radial(rgba(0,0,0,.2); rgba(0,0,0,.4));
+        }
+
+    }
+
+    #challenge-challenge-cta {
+        width: 100%;
+        background: @brand-primary;
+        overflow:hidden;
+        position: relative;
+        padding: 40px 0 80px;
+
+        @media(max-width: @screen-sm-max){
+            padding-bottom: 40px;
+        }
+
+        .fa-stack {
+            font-size:180px;
+            position: absolute;
+            .fa-stack-2x {
+                color: darken(@brand-primary, 10%)
+            }
+            .fa-stack-1x {
+                color: lighten(@brand-primary, 5%)
+            }
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 48px;
+        }
+        p {
+            color: #fafafa;
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        h2 {
+            padding-top: 40px;
+            margin: 20px 0;
+            color: #FFF;
+            @media(max-width: @screen-sm-max){
+                padding-top: 0;
+                margin-top: 0;
+            }
+        }
+        .btn {
+            font-size: 18px;
+            padding: 15px 14px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            #gradient.radial(rgba(0,0,0,0.01); rgba(0,0,0,0.1));
+        }
+    }
+
+    #challenges-cta {
+        width: 100%;
+        background: #F1f1f1;
+        overflow:hidden;
+        position: relative;
+        padding: 40px 0 80px;
+
+        @media(max-width: @screen-sm-max){
+            padding-bottom: 40px;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 48px;
+            @media(max-width: @screen-sm-max){
+                font-size: 30px;
+            }
+        }
+        p {
+            color: #fafafa;
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        h2 {
+            padding-top: 40px;
+            margin: 20px 0;
+            @media(max-width: @screen-sm-max){
+                padding-top: 0;
+                margin-top: 0;
+            }
+        }
+        .btn {
+            font-size: 18px;
+            padding: 15px 14px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            #gradient.radial(rgba(0,0,0,.2); rgba(0,0,0,.5));
+        }
+    }
+
+    .challenge-cta {
+        width: 100%;
+        background: #F1f1f1;
+        overflow:hidden;
+        position: relative;
+        padding: 40px 0 80px;
+
+        @media(max-width: @screen-sm-max){
+            padding-bottom: 40px;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 48px;
+            @media(max-width: @screen-sm-max){
+                font-size: 30px;
+            }
+        }
+        p {
+            color: #fafafa;
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        h2 {
+            padding-top: 40px;
+            margin: 20px 0;
+            @media(max-width: @screen-sm-max){
+                padding-top: 0;
+                margin-top: 0;
+            }
+        }
+        .btn {
+            font-size: 18px;
+            padding: 15px 14px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            #gradient.radial(rgba(0,0,0,.2); rgba(0,0,0,.5));
+        }
+    }
+
+    #challenges-explained {
+        background-color: #FFF;
+        position: relative;
+        padding-bottom:30px;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            #gradient.vertical(rgba(0,0,0,.1); rgba(0,0,0,0));
+        }
+
+        .header-text {
+            margin-bottom: 30px;
+        }
+    }
+
+    #coming-soon {
+        background-image: url('/static/img/footballfield.jpg');
+        background-position: center bottom;
+        width: 100%;
+        background-size: cover;
+        overflow:hidden;
+        position: relative;
+        padding: 40px 0;
+
+        h1 {
+            color: #ffffff;
+            font-size: 48px;
+            @media(max-width: @screen-sm-max){
+                font-size: 30px;
+            }
+        }
+        h2 {
+            color: #ffffff;
+            font-size: 38px;
+            @media(max-width: @screen-sm-max){
+                font-size: 20px;
+            }
+        }
+        p {
+            color: #fafafa;
+            font-size: 18px;
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            #gradient.radial(rgba(0,0,0,.3); rgba(0,0,0,.8));
+        }
+    }
+
+    #entities-section {
+        padding: 40px 0;
+        background: #fff;
+        .entity-section-header {
+            background-color: @brand-primary;
+            color: #ffffff;
+            padding: 20px 10px;
+            font-size: 28px;
+            margin-bottom: 0;
+            position: relative;
+            > img {
+                float: right;
+                height: 28px;
+            }
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                #gradient.radial(rgba(0,0,0,0); rgba(0,0,0,.05));
+            }
+            @media(max-width: @screen-sm-max){
+                font-size: 18px;
+                padding: 10px 10px;
+                > img {
+                    height: 18px;
+                }
+            }
+        }
+        .top-entity {
+            .image {
+                height: 150px;
+                background-position: center center;
+                background-size: cover;
+                position: relative;
+                > img {
+                    position: absolute;
+                    bottom: 5px;
+                    left: 5px;
+                    height: 50px;
+                }
+            }
+            .caption {
+                padding-bottom: 20px;
+                h4 {
+                    font-size: 24px;
+                }
+                p {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+
+    .spudder-footer {
+        margin-top: 0 !important;
+    }
+}
+
+body#challenges-splash {
+    background-color: #FFF;
+}
+
+
+.fan-page-form .input-required {
+  color: #ff0000;
+}
+
+.fan-page-form #map_canvas {
+  width: 100%;
+  height: 350px;
+  margin-bottom: 10px;
+}
+
+.fan-page-form #location {
+  width: 90%;
+  margin-top: 10px;
+}
+
+input[type="file"] {
+  display: block;
+}
+
+#fan-jumbotron-default {
+//    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.85) 100%), url(bg.png) repeat 0 0, url(/static/img/spudderspuds/button-fans-medium.png) repeat 0 0 !important;
+//    background: -moz-linear-gradient(top, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.85) 100%), url(/static/img/spudderspuds/button-fans-medium.png) repeat 0 0 !important;
+//    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.85)), color-stop(100%,rgba(255,255,255,0.85))), url(/static/img/spudderspuds/button-fans-medium.png) repeat 0 0 !important;
+//    background: -webkit-linear-gradient(top, rgba(255,255,255,0.85) 0%,rgba(255,255,255,0.85) 100%), url(/static/img/spudderspuds/button-fans-medium.png) repeat 0 0 !important;
+//    background: -o-linear-gradient(top, rgba(255,255,255,0.85) 0%,rgba(255,255,255,0.85) 100%), url(/static/img/spudderspuds/button-fans-medium.png) repeat 0 0 !important;
+//    background: -ms-linear-gradient(top, rgba(255,255,255,0.85) 0%,rgba(255,255,255,0.85) 100%), url(/static/img/spudderspuds/button-fans-medium.png) repeat 0 0 !important;
+//    background: linear-gradient(to bottom, rgba(255,255,255,0.85) 0%,rgba(255,255,255,0.85) 100%), url(/static/img/spudderspuds/button-fans-medium.png) repeat 0 0 !important;
+    background-image: url('/static/img/spudderspuds/challenges/jumbotron.jpg') !important;
+    background-position: center top;
+    background-size: cover;
+}
+
+.edit-mode{
+  display: none;
+}
+
+.input-required {
+  color: #ff0000;
+}
+
+#map_canvas {
+  width: 100%;
+  height: 350px;
+  margin-bottom: 10px;
+}
+
+#location {
+  width: 90%;
+  margin-top: 10px;
+}
+
+body {
+    padding-top: 180px;
+    @media(max-width: @screen-xs){
+        padding-top: 0px;
+    }
+}
+
+.navbar-masthead {
+
+    &.spudder-masthead {
+        height: 120px;
+        background-color: rgba(0,0,0,.8);
+        position:absolute;
+        top: 0;
+        width: 100%;
+        border-bottom: 1px solid #000;
+        padding-top: 40px;
+
+        @media(max-width: @screen-xs){
+            height: 40px;
+            padding-top: 0px;
+            position: relative;
+        }
+
+        .navbar-header {
+            display: inline-block;
+            > a {
+                > img {
+                    height: 50px;
+
+                    @media(max-width: @screen-xs) {
+                        height: 35px;
+                        padding-top: 3px;
+                    }
+                }
+            }
+        }
+
+        .navbar-collapse {
+            &.in {
+               background-color: rgba(0,0,0,.8);
+            }
+        }
+
+        .login-signup {
+            .btn {
+                width: 120px;
+                font-weight: bold;
+                @media(max-width: @screen-xs){
+                    width: 80px;
+                }
+            }
+        }
+
+        .navbar-text {
+            margin-right: 30px;
+        }
+
+        #current-user {
+            height: 50px;
+            width: 50%;
+            margin: 0;
+            float: right !important;
+            @media(max-width: @screen-xs){
+                padding-top: 3px;
+            }
+            img {
+                height: 50px;
+                cursor: pointer;
+                @media(max-width: @screen-xs){
+                    height: 35px;
+                }
+            }
+            .dropdown-menu {
+                top: 85%;
+                padding: 6px 6px 6px 6px;
+                background-color: #1a1a1a;
+                @media(max-width: @screen-xs){
+                    top: 105%;
+//                    padding-top: 6px;
+                }
+                li {
+                    a {
+                        color: #FFF;
+                        &:hover {
+                            color: #000;
+                        }
+                    }
+
+                }
+                @media(max-width: @screen-xs-max){
+                    &:before {
+                        position: absolute;
+                        top: -7px;
+                        right: 25px;
+                        display: inline-block;
+                        border-right: 7px solid transparent;
+                        border-bottom: 7px solid #1a1a1a; //#ccc;
+                        border-left: 7px solid transparent;
+                        border-bottom-color: #1a1a1a;//rgba(0, 0, 0, 0.2);
+                        content: '';
+                    }
+                    &:after {
+                        position: absolute;
+                        top: -6px;
+                        right: 26px;
+                        display: inline-block;
+                        border-right: 6px solid transparent;
+                        border-bottom: 6px solid #1a1a1a; //#ffffff;
+                        border-left: 6px solid transparent;
+                        content: '';
+                    }
+                }
+                @media(min-width: @screen-sm-min){
+                    &:before {
+                        position: absolute;
+                        top: -7px;
+                        right: 32px;
+                        display: inline-block;
+                        border-right: 7px solid transparent;
+                        border-bottom: 7px solid #1a1a1a; //#ccc;
+                        border-left: 7px solid transparent;
+                        border-bottom-color: #1a1a1a;//rgba(0, 0, 0, 0.2);
+                        content: '';
+                    }
+                    &:after {
+                        position: absolute;
+                        top: -6px;
+                        right: 33px;
+                        display: inline-block;
+                        border-right: 6px solid transparent;
+                        border-bottom: 6px solid #1a1a1a; //#ffffff;
+                        border-left: 6px solid transparent;
+                        content: '';
+                    }
+                }
+            }
+            .media-body {
+                white-space: nowrap;
+                text-align: right;
+                .media-heading {
+                    padding-top: 2px;
+                    font-size: 20px;
+                    margin-bottom: 0;
+                    color: #FFF;
+                    @media(max-width: @screen-xs){
+                        font-size: 12px;
+                    }
+                }
+                p {
+                    color: @brand-primary;
+                    text-transform: uppercase;
+                    @media(max-width: @screen-xs){
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/**********************************************************************************************************************/
+// Code added to support the launch of challenegs only - Sep 2014
+/**********************************************************************************************************************/
+
+body.challenges {
+    background-color: #010001;
+    #body-background-image-container {
+        width: 100%;
+        height: 100%;
+        background-image: url('/static/img/spudderspuds/challenges/jumbotron.jpg');
+        background-size: cover;
+        background-position: center top;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            #gradient.radial(rgba(0,0,0,.2); rgba(0,0,0,.4));
+        }
+    }
+}
+
+#challenges-choose-template {
+    .challenge-templates {
+
+        .list-group-item {
+            position: relative;
+            border-radius: 3px;
+            color: #000;
+            background-size: cover;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                #gradient.radial(rgba(0,0,0,.01); rgba(0,0,0,.1));
+            }
+
+
+            .media {
+                position: relative;
+                .media-object {
+                    height: 150px;
+                    width: 150px;
+                    background-size: cover;
+                    @media (max-width: @screen-xs-max) {
+                        height: 80px;
+                        width: 80px;
+                    }
+                }
+                p{
+                    @media (max-width: @screen-xs-max) {
+                        padding-right: 40px;
+                    }
+                }
+                .fa-arrow-right {
+                    position: absolute;
+                    top: 30%;
+                    right: 2px;
+                    font-size: 36px;
+                    color: @brand-primary;
+                }
+            }
+
+            &.icebucket {
+                .media-object {
+                    background-image: url('/static/img/spudderspuds/challenges/challenge_icebucket_icon.jpg');
+                }
+            }
+            &.piechallenge {
+                .media-object {
+                    background-image: url('/static/img/spudderspuds/challenges/challenge_piechallenge_icon.jpg');
+                }
+            }
+        }
+    }
+}
+
+#challenges-choose-club, #challenge-accept-beneficiary {
+    #clubs-container {
+        padding: 10px;
+        min-height: 200px;
+    }
+    .table-top-control {
+        .col-md-6:last-child {
+            .make-md-column(12);
+        }
+    }
+    table {
+        th {
+            display: none;
+        }
+        td {
+            padding: 0;
+            h4 {
+                margin: 0;
+                padding: 4px;
+            }
+        }
+    }
+}
+
+.challenge-container {
+    border: 1px solid #FFF;
+    .image {
+        &.without-image {
+            background-position: center top;
+            background-size: cover;
+            height: 200px;
+            background-image: url('/static/img/spudderspuds/challenges/jumbotron.jpg');
+        }
+    }
+    .caption {
+        border-top:1px solid #FFF;
+        background: #F1f1f1;
+        padding: 10px;
+    }
+}
+
+.well {
+    background-color: rgba(255, 255, 255, .8);
+    > .page-header {
+        h1 {
+            margin-top: 0;
+        }
+    }
+    .well {
+        background-color: #F1f1f1;
+    }
+}
+
+.wizard-steps {
+    display: block;
+    margin-bottom: 10px;
+    small {
+        margin-left: -5px;
+    }
+    .title {
+        display: inline-block;
+        padding-top: 18px;
+        @media(max-width: @screen-xs-max) {
+            font-size:80%;
+            width: 50%;
+        }
+
+    }
+}
+
+.btn-cta {
+    font-size: 18px;
+    padding: 15px 14px;
+    @media(max-width: @screen-xs-max) {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.698);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    .inner {
+        position: absolute;
+        width: 100%;
+        p {
+            margin: 20% auto 0;
+            color: #ffffff;
+            font-size: 28px;
+            text-align: center;
+        }
+        .progress {
+            width: 40%;
+            margin: 0 auto;
+        }
+    }
+}
+
+.text-warning {
+    color: @brand-warning;
+}
+
+.spudder-jumbotron {
+    margin-bottom: -180px;
+    @media (max-width: @screen-xs-max) {
+        margin-bottom: -60px;
+    }
+}
+
+.jumbotron-bottom-banner {
+    background: rgba(0,0,0, .7);
+    position:absolute;
+    bottom: 0;
+    padding: 10px;
+    width: 100%;
+    color: #FFF;
+
+    .logo {
+        height: 100px;
+    }
+
+    h1 {
+        position: relative;
+    }
+
+    .social-link {
+        font-size: 30px;
+        float: left;
+    }
+}
+
+#fan-page {
+    .tab-pane {
+        padding: 30px 0 20px;
+    }
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    background-color: rgba(255,255,255, 0);
+    border-top-color: rgba(255,255,255, 0) !important;
+}
+
+.nav-tabs-google > li.active > a, .nav-tabs-google > li.active > a:hover, .nav-tabs-google > li.active > a:focus {
+    color: @brand-primary;
+    border-color: @brand-primary;
+}
+
+.alert {
+    border: 0px;
+    border-radius: 0 !important;
+    a, .alert-link {
+        color: #FFFFFF;
+    }
+    .variations(~"", background-color, #FFFFFF);
+    &-info, &-danger, &-warning, &-success {
+        color: #FFFFFF;
+    }
+    &-default {
+        a, .alert-link {
+            color: #000000;
+        }
+    }
+}
+.alert-success {
+  .alert-variant(@alert-success-bg; @alert-success-border; @alert-success-text);
+}
+.alert-info {
+  .alert-variant(@alert-info-bg; @alert-info-border; @alert-info-text);
+}
+.alert-warning {
+//  .alert-variant(@alert-warning-bg; @alert-warning-border; @alert-warning-text);
+  .alert-variant(@brand-warning; @alert-warning-border; @alert-warning-text);
+}
+.alert-danger {
+  .alert-variant(@alert-danger-bg; @alert-danger-border; @alert-danger-text);
+}
+
+
+.alert-success, .alert-info, .alert-warning, .alert-danger {
+    text-shadow: none;
+}
+
+/**********************************************************************************************************************/
+// Code to be moved to clubs/spudderclubs.less
+/**********************************************************************************************************************/
+body {
+    &.clubs {
+        .dashboard-page {
+            margin-top: -60px;
+            @media(max-width: @screen-xs-max){
+                margin-top: -20px;
+            }
+
+            > .row {
+                margin-right: 0;
+                @media(max-width: @screen-xs-max){
+                    margin-left: 0;
+                }
+                .navbar-collapse {
+                    @media(max-width: @screen-xs-max){
+                        padding-right: 0;
+                        padding-left: 0;
+                    }
+                }
+            }
+
+            .submenu-header {
+                background-color: @brand-primary;
+                color: #FFF;
+                padding: 10px 0;
+                h4 {
+                    .fa-angle-right {
+                        margin: 0 15px;
+                    }
+                    a {
+                        color: #FFF;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .submenu-menu {
+                background-color: #F1F1F1;
+                color: #FFF;
+                .list-group {
+                    .list-group-item {
+                        background-color: inherit;
+                        border: none;
+                        border-left: 3px solid #F1F1F1;
+                        &.active, &:hover {
+                            border-left: 3px solid @brand-primary;
+                            background-color: #FFF;
+                            color: #000;
+                        }
+                    }
+                }
+                @media (max-width: @screen-xs-max) {
+                    background-color: @brand-primary;
+                    .list-group {
+                        .list-group-item {
+                            color: #FFF;
+                            border-left: 3px solid @brand-primary;
+                            &.active, &:hover {
+                                color: #FFF;
+                                border-left: 3px solid #FFF;
+                                background-color: lighten(@brand-primary, 10%);
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            .submenu-page {
+                padding: 40px 0;
+            }
+        }
+    }
+}
+
+
+body {
+    &#challenge-page {
+        .spudder-jumbotron {
+            background-position: center center;
+        }
+        #info-bar {
+            background-color: @brand-primary;
+            color: #FFF;
+            h2 {
+                small {
+                    color: #FFF;
+                }
+                @media (max-width: @screen-xs-max) {
+                    font-size: 18px;
+                }
+            }
+        }
+        #challenge-body {
+            padding-top: 30px;
+
+            .tab-content {
+                .tab-pane {
+                    padding-top: 30px;
+
+                    &#tab-videos {
+                        .embed-responsive {
+                            height: 150px;
+                            @media (max-width: @screen-xs-max) {
+                                height: 100px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #challenge-actions {
+            padding-top: 30px;
+            .action-col {
+
+                .action-container {
+                    margin-top: 0px;
+                    background-color: #FAFAFA;
+                    min-height: 200px;
+                    border: 1px solid #DDD;
+                    border-top: none;
+                    padding: 20px 10px;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        &.bptrak-brendan-p-tevlin-fund {
+            .spudder-jumbotron {
+                background-image: url('/static/img/spudderspuds/challenges/jumbotron-brendantevlin.png') !important;
+                @media (max-width: @screen-xs-max) {
+                    background-image: url('/static/img/spudderspuds/challenges/jumbotron-brendantevlin-small.png') !important;
+                }
+                .jumbotron-bottom-banner {
+                    h1 {
+                        margin-bottom: 0;
+                        @media (max-width: @screen-xs-max) {
+                            font-size: 22px;
+                        }
+                    }
+                    h2 {
+                        margin: 0;
+                        @media (max-width: @screen-xs-max) {
+                            font-size: 18px;
+                        }
+                    }
+                    h3 {
+                        margin-top: 3px;
+                        @media (max-width: @screen-xs-max) {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.payitforward-dreams-for-kids {
+            .spudder-jumbotron {
+                background-image: url('/static/img/spudderspuds/challenges/jumbotron-pif.png') !important;
+            }
+        }
+    }
+}
+
+
+
+/**********************************************************************************************************************/
+// Reworking the fan dashboard
+/**********************************************************************************************************************/
+body {
+    &#fan-dashbaord {
+        .submenu-header {
+            background-color: @brand-primary;
+            color: #FFF;
+            padding: 10px 0;
+            margin-top: -60px;
+            margin-bottom: 30px;
+            @media (max-width: @screen-xs-max){
+                margin-top: -20px;
+            }
+            .navbar {
+                margin-bottom: 0;
+                .navbar-brand {
+                    margin: 0;
+                    font-weight: bold;
+                }
+                .dropdown-toggle {
+                    color: #FFF;
+                    cursor: pointer !important;
+                    &:hover {
+                        color: #DDD;
+                    }
+                }
+                .nav {
+                    a {
+                        color: #FFF;
+                        &:hover, &:focus {
+                            background-color: darken(@brand-primary, 10%);
+                        }
+                    }
+                }
+            }
+        }
+        .panel {
+            .panel-heading {
+                .panel-title {
+                    font-size: 30px;
+                }
+                .dropdown {
+                    .dropdown-toggle {
+                        font-size:28px;
+                        cursor: pointer !important;
+                        &:hover {
+                            color: @brand-primary;
+                        }
+                    }
+                    &.open {
+                        .dropdown-toggle {
+                            color: @brand-primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.spud-carousel {
+    padding: 0;
+    .item .active .empty {
+        img {
+            height: 300px;
+        }
+    }
+}
+
+.spud-container {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #FFFFFF;
+    border-color: #DDD;
+    border-image: none;
+    border-radius: 3px 3px 3px 3px;
+    border-style: solid;
+    border-width: 1px 1px 2px;
+    box-shadow: none;
+    word-wrap: break-word;
+
+    > .image {
+        background: rgba(0,0,0,0.4);
+        height: 300px;
+        background-size: cover;
+        background-position: center center;
+        margin: 0;
+    }
+
+    > .caption {
+        width: 100%;
+        background: #fafafa;
+        padding: 0 5px;
+        margin-top: -15px;
+
+        .media {
+            > img {
+                margin: 10px;
+                width:50px;
+            }
+            .media-body {
+                padding:10px;
+                a {
+                    color: white;
+                    font-weight: bold;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    .spud-add-tags{
+        opacity: 0.7;
+        position:absolute;
+        right: 8px;
+        z-index:1;
+    }
+}
+

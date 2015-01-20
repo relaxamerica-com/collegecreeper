@@ -1,0 +1,12 @@
+.settings
+spudder/cloud/private-key.js
+spudder/.idea
+*.pyc
+*.project
+*.pydevproject
+spudmart/src/.gaedata
+spudmart/src/test-reports
+spudmart/.idea
+.idea
+xunit.xml
+.DS_store
