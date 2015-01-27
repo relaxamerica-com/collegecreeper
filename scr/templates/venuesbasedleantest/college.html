@@ -1,0 +1,25 @@
+{% extends 'venuesbasedleantest/base.html' %}
+
+{% block body %}
+
+    <div class="container">
+            {% for m in media.object_list %}
+
+                {% if forloop.counter0|divisibleby:3 or forloop.counter0 == 0 %}
+                    <div class="row">
+                {% endif %}
+
+                <div class="col-sm-4">
+                    <div style="height: 300px;">
+                        one
+                    </div>
+                </div>
+
+                {% if forloop.counter|divisibleby:3 or forloop.counter == media.object_list|length %}
+                    </div>
+                {% endif %}
+
+            {% endfor %}
+    </div>
+
+{% endblock %}

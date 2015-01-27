@@ -63,6 +63,9 @@ STATIC_ROOT = ''
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/static/'
+ADMIN_MEDIA_PREFIX = '/static/admin/'
+
+STATIC_ROOT = '/Users/matt/code/spudder/collegecreeper/scr/static'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -111,9 +114,10 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
+    # 'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.admin',
     'djangotoolbox',
     'djangoappengine',
     'autoload',
@@ -142,9 +146,15 @@ CACHES = {
     }
 }
 
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
-# NOSE_ARGS = ['--with-xunit', '--xunit-file=test-reports/xunit.xml', '-v']
-NOSE_ARGS = ['--with-xunit', '-v']
-NOSE_PLUGINS = ['nose_plugins.noseplugins.TestDiscoveryPlugin']
+INSTAGRAM_ACCESS_TOKEN = "1422127379.5a3e9d7.bb8d3627019f4ab1bd07d04322e373d1"
+INSTAGRAM_CLIENT_ID = "5a3e9d750ad54c6aa747c5e428e91791"
+INSTAGRAM_CLIENT_SECRET = "bf49c41ca29a4070a434143d2a5c6d97"
 
+
+COLLEGES = {
+    'london': {
+        'latitude': 51.5314270,
+        'longitude': -0.1261330,
+    }
+}
 

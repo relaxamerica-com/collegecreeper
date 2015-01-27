@@ -1,0 +1,15 @@
+{% extends 'venuesbasedleantest/base.html' %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="list-group">
+            <a class="list-group-item" href="{% url venuesbasedleantest_college 'london' %}">
+                <i class="fa fa-arrow-circle-right fa-4x pull-right text-primary"></i>
+                <h4 class="list-group-item-heading">London</h4>
+                <p>Just testing that we can get posts in and out.</p>
+            </a>
+        </div>
+    </div>
+
+{% endblock %}
