@@ -2,24 +2,41 @@
 
 {% block body %}
 
-    <div class="container">
+    <div class="col-md-3 sidebar">
+        <div class="navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#rebound-navbar-collapse"><span class="fa fa-bars"></span> Menu</button>
+                <a href="/" class="navbar-brand">CCreeper</a>
+                <p class="brand-text">Creeping over your college.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9 content">
+        <div class="portfolio-wrapper">
             {% for m in media.object_list %}
+                <div class="card">
+                    <a class="thumb">
+                        <img src="{{ m.get_thumbnail }}" alt="" title=""/>
+                        <span class="overlay"><span class="fa fa-search"></span></span>
+                    </a>
 
-                {% if forloop.counter0|divisibleby:3 or forloop.counter0 == 0 %}
-                    <div class="row">
-                {% endif %}
+                    <div class="card-body">
+                        <h2>{{ m.caption }}</h2>
 
-                <div class="col-sm-4">
-                    <div style="height: 300px;">
-                        one
+{#                        <p>The cinema where Sintel screens has digital 4k projection, I’m working with them getting this#}
+{#                            formatted right and delivered. Would be a real ...</p>#}
+
+{#                        <p><a href="portfolio-item.html">Read More</a></p>#}
+                    </div>
+                    <div class="card-footer">
+                        <ul class="list-inline filters">
+{#                            <li><a href="#none">Film</a></li>#}
+{#                            <li><a href="#none">Art</a></li>#}
+                        </ul>
                     </div>
                 </div>
-
-                {% if forloop.counter|divisibleby:3 or forloop.counter == media.object_list|length %}
-                    </div>
-                {% endif %}
-
             {% endfor %}
+        </div>
     </div>
 
 {% endblock %}

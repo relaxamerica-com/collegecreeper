@@ -14,6 +14,9 @@ class InstagramMedia(models.Model):
     user = models.ForeignKey('InstagramUser')
     created_time = models.CharField(max_length=255)
 
+    def get_thumbnail(self):
+        return self.instagrammediaitem_set.all()[0].url
+
     @classmethod
     def get_new_for_college(cls, college):
         college_data = settings.COLLEGES.get(college)
@@ -57,7 +60,7 @@ class InstagramMedia(models.Model):
             defaults={
                 'distance': data.get('distance', 0),
                 'type': type,
-                'caption': data.get('caption', '') or '',
+                'caption': (data.get('caption') or {}).get('text') or '',
                 'link': data.get('link', ''),
                 'user': user,
                 'created_time': data.get('created_time')})
