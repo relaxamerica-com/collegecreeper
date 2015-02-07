@@ -14,7 +14,7 @@ def college(request, college_name):
     c = settings.COLLEGES.get(college_name)
     if not c:
         raise Http404
-    instagram_media = InstagramMedia.objects.filter(college=college_name).all()
+    instagram_media = InstagramMedia.objects.filter(college=college_name).order_by('-created_time').all()[:45]
     paginator = Paginator(instagram_media, 9)  # Show 25 contacts per page
 
     # Make sure page request is an int. If not, deliver first page.
@@ -29,7 +29,8 @@ def college(request, college_name):
     except (EmptyPage, InvalidPage):
         media = paginator.page(paginator.num_pages)
 
-    return render(request, 'venuesbasedleantest/college.html', {"media": media})
+    template_data = {"media": media, "college": c}
+    return render(request, 'venuesbasedleantest/college.html', template_data)
 
 
 def instagram_poll(request):

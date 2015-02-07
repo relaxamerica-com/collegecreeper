@@ -1,21 +1,63 @@
 {% extends 'venuesbasedleantest/base.html' %}
 
+{% block js %}
+    <script type="text/javascript" language="javascript">
+
+        function draw_map() {
+            var $map = $('#map');
+            var $wrapper = $('.gmaps-wrapper');
+            var width = $wrapper.innerWidth();
+            var height = parseInt(width/4);
+            if (height < 150)
+                height = 150;
+            if (height > 200)
+                height = 200;
+            var url = "https://maps.googleapis.com/maps/api/staticmap?center={{ college.latitude }},{{ college.longitude }}&zoom=15&size=" + width + "x" + height + "&maptype=hybrid&scale=2"
+            $map.attr('src', url);
+        }
+
+        $(document).ready(function(){
+            draw_map();
+
+            $(window).on('resize', function(){
+                draw_map();
+            });
+
+        });
+
+    </script>
+{% endblock %}
+
+{% block css %}
+    <style type="text/css">
+        #map {
+            width: 100%;
+            margin-bottom: 30px;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+{% endblock %}
+
 {% block body %}
 
     <div class="col-md-3 sidebar">
         <div class="navbar" role="navigation">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#rebound-navbar-collapse"><span class="fa fa-bars"></span> Menu</button>
-                <a href="/" class="navbar-brand">CCreeper</a>
+{#                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#rebound-navbar-collapse"><span class="fa fa-bars"></span> Menu</button>#}
+                <a href="/" class="navbar-brand">College Creeper</a>
                 <p class="brand-text">Creeping over your college.</p>
             </div>
         </div>
     </div>
     <div class="col-md-9 content">
+        <div class="gmaps-wrapper">
+            <img id="map"/>
+        </div>
         <div class="portfolio-wrapper">
             {% for m in media.object_list %}
                 <div class="card">
-                    <a class="thumb">
+                    <a class="thumb" href="{{ m.link }}" target="_blank">
                         <img src="{{ m.get_thumbnail }}" alt="" title=""/>
                         <span class="overlay"><span class="fa fa-search"></span></span>
                     </a>
@@ -30,12 +72,31 @@
                     </div>
                     <div class="card-footer">
                         <ul class="list-inline filters">
+                            <li><i class="fa fa-instagram"></i></li>
+                            <li>{{ m.get_created_time }}</li>
 {#                            <li><a href="#none">Film</a></li>#}
 {#                            <li><a href="#none">Art</a></li>#}
                         </ul>
                     </div>
                 </div>
             {% endfor %}
+        </div>
+        <div class="pagination-wrapper">
+            <ul class="pagination pagination-centered">
+                {% if media.has_previous %}
+                    <li><a href="?page=1"><<</a></li>
+                    <li><a href="?page={{ media.previous_page_number }}"><</a></li>
+                {% endif %}
+    
+                {% for i in media.paginator.page_range %}
+                    <li {% if media.number == i %} class="active" {% endif %}><a href="?page={{i}}">{{i}}</a></li>
+                {% endfor %}
+    
+                {% if media.has_next %}
+                    <li><a href="?page={{ media.next_page_number }}">></a></li>
+                    <li><a href="?page={{ media.paginator.num_pages }}">>></a></li>
+                {% endif %}
+            </ul>
         </div>
     </div>
 

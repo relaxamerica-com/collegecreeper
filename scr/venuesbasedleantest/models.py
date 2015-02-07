@@ -1,5 +1,6 @@
 import json
 import urllib2
+import datetime
 from django.conf import settings
 from django.db import models
 
@@ -17,6 +18,12 @@ class InstagramMedia(models.Model):
     def get_thumbnail(self):
         return self.instagrammediaitem_set.all()[0].url
 
+    def get_created_time(self):
+        try:
+            return datetime.datetime.fromtimestamp(int(self.created_time))
+        except:
+            return None
+
     @classmethod
     def get_new_for_college(cls, college):
         college_data = settings.COLLEGES.get(college)
@@ -32,7 +39,10 @@ class InstagramMedia(models.Model):
         response = urllib2.urlopen(url)
         data = json.load(response)
         for d in data.get('data', []):
-            cls.from_api_return(college, d)
+            try:
+                cls.from_api_return(college, d)
+            except Exception as ex:
+                pass
 
     @classmethod
     def from_api_return(cls, college, data):
@@ -86,6 +96,6 @@ class InstagramMediaItem(models.Model):
 
 
 class InstagramUser(models.Model):
-    instagram_id = models.CharField(max_length=255)
+    instagram_id = models.CharField(max_length=255, unique=True)
     username = models.CharField(max_length=255)
     profile_picture = models.CharField(max_length=1023)

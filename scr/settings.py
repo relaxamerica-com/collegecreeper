@@ -152,9 +152,13 @@ INSTAGRAM_CLIENT_SECRET = "bf49c41ca29a4070a434143d2a5c6d97"
 
 
 COLLEGES = {
-    'london': {
-        'latitude': 51.5314270,
-        'longitude': -0.1261330,
-    }
+    'fdu': {
+        'latitude': 40.776479,
+        'longitude': -74.433242,
+    },
+    'msu': {
+        'latitude': 40.86152,
+        'longitude': -74.198552,
+    },
 }
 
