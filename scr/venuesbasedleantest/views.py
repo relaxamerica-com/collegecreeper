@@ -34,6 +34,7 @@ def college(request, college_name):
 
 
 def instagram_poll(request):
-    for c in settings.COLLEGES:
-        InstagramMedia.get_new_for_college(c)
+    if settings.INSTAGRAM['POLLING_ENABLED']:
+        for c in settings.COLLEGES:
+            InstagramMedia.get_new_for_college(c)
     return HttpResponse("done")

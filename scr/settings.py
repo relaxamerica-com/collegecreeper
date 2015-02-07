@@ -1,3 +1,4 @@
+from google.appengine.api.app_identity import get_application_id
 from djangoappengine.settings_base import *
 
 # Django settings for collegecreeper project.
@@ -102,6 +103,15 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.request',
+    'django.core.context_processors.media',
+    'django.contrib.messages.context_processors.messages',
+    'contextprocessors.settingscontext.settings_context',
+)
+
+
 ROOT_URLCONF = 'urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
@@ -127,6 +137,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'contextprocessors',
     'venuesbasedleantest',
 )
 
@@ -146,19 +157,4 @@ CACHES = {
     }
 }
 
-INSTAGRAM_ACCESS_TOKEN = "1422127379.5a3e9d7.bb8d3627019f4ab1bd07d04322e373d1"
-INSTAGRAM_CLIENT_ID = "5a3e9d750ad54c6aa747c5e428e91791"
-INSTAGRAM_CLIENT_SECRET = "bf49c41ca29a4070a434143d2a5c6d97"
-
-
-COLLEGES = {
-    'fdu': {
-        'latitude': 40.776479,
-        'longitude': -74.433242,
-    },
-    'msu': {
-        'latitude': 40.86152,
-        'longitude': -74.198552,
-    },
-}
-
+from env_settings import *

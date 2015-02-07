@@ -32,7 +32,7 @@ class InstagramMedia(models.Model):
         url = "https://api.instagram.com/v1/media/search?lat=%s&lng=%s&access_token=%s" % (
             college_data['latitude'],
             college_data['longitude'],
-            settings.INSTAGRAM_ACCESS_TOKEN)
+            settings.INSTAGRAM['ACCESS_TOKEN'])
         if InstagramMedia.objects.filter(college=college).count():
             last_object = InstagramMedia.objects.filter(college=college).order_by('-created_time')[0]
             url += "&min_timestamp=%s" % last_object.created_time
