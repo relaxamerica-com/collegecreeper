@@ -1,0 +1,4 @@
+cron:
+- description: Poll Instagram
+  url: /instagram_poll
+  schedule: every 10 minutes

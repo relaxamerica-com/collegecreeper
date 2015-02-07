@@ -16,3 +16,9 @@ indexes:
   properties:
   - name: app_label
   - name: name
+
+- kind: venuesbaseAddedleantest_instagrammedia
+  properties:
+  - name: college
+  - name: created_time
+    direction: desc
