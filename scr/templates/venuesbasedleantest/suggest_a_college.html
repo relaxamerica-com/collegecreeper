@@ -1,0 +1,53 @@
+{% extends 'venuesbasedleantest/base.html' %}
+
+{% load bootstrap3 %}
+
+{% block js %}
+    <script type="text/javascript" language="JavaScript">
+        $(document).ready(function(){
+            // Robot submission protection
+            $('#hide-me').parent().hide();
+        });
+    </script>
+
+{% endblock %}
+
+{% block body %}
+    <div class="col-md-3 sidebar">
+        {% include 'venuesbasedleantest/components/navbar.html'%}
+    </div>
+    <div class="col-md-9 content">
+        <div class="page">
+            <article>
+                <div class="page-header">
+                    <h1>Suggest a college</h1>
+                    <p class="lead">Want to creep you college? Just let us know!</p>
+                </div>
+                {% if sent %}
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-1">
+                            <div class="alert alert-success media">
+                                <i class="fa fa-5x fa-check media-object pull-left"></i>
+                                <div class="media-body">
+                                    <h4 class="media-heading">We got it!</h4>
+                                    <p>Thanks for suggesting your college.</p>
+                                    <p>We'll get working on it and let you know as soon as its up!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <form method="post">
+                        {% csrf_token %}
+                        {% bootstrap_form form %}
+                        {% buttons %}
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-comment"></i> Suggest
+                            </button>
+                        {% endbuttons %}
+                    </form>
+                {% endif %}
+            </article>
+        </div>
+    </div>
+{% endblock %}

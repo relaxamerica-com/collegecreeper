@@ -42,13 +42,7 @@
 {% block body %}
 
     <div class="col-md-3 sidebar">
-        <div class="navbar" role="navigation">
-            <div class="navbar-header">
-{#                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#rebound-navbar-collapse"><span class="fa fa-bars"></span> Menu</button>#}
-                <a href="/" class="navbar-brand">College Creeper</a>
-                <p class="brand-text">Creeping over your college.</p>
-            </div>
-        </div>
+        {% include 'venuesbasedleantest/components/navbar.html'%}
     </div>
     <div class="col-md-9 content">
         <div class="gmaps-wrapper">
